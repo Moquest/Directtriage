@@ -1,0 +1,833 @@
+!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DirectTriage - Professionele Triage, Waarneming & Consultatie</title>
+    <meta name="description" content="Professionele telefonische triage, waarneming en consultatie voor commerciële zorgklinieken. Van urgentie-beoordeling tot routinematige waarneming - 24/7 beschikbaar.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#F97316',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary">
+                    DIRECT<span class="text-secondary">│</span>TRIAGE
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#diensten" class="text-gray-700 hover:text-primary">Diensten</a>
+                    <a href="#voor-wie" class="text-gray-700 hover:text-primary">Voor Wie</a>
+                    <a href="#waarom" class="text-gray-700 hover:text-primary">Waarom</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary">Contact</a>
+                    <a href="tel:0631195171" class="bg-secondary hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold">
+                        06 311 951 71
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#diensten" class="block py-2 text-gray-700">Diensten</a>
+                <a href="#voor-wie" class="block py-2 text-gray-700">Voor Wie</a>
+                <a href="#waarom" class="block py-2 text-gray-700">Waarom</a>
+                <a href="contact.html" class="block py-2 text-gray-700">Contact</a>
+                <a href="tel:0631195171" class="block py-2 text-secondary font-semibold">Bel: 06 311 951 71</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-primary to-blue-700 text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                
+                <div class="text-sm font-semibold text-blue-200 mb-4 uppercase tracking-wide">
+                    Triage • Waarneming • Consultatie
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Professionele Telefonische Ondersteuning Voor Uw Kliniek
+                </h1>
+                
+                <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                    Van urgente triage tot routinematige waarneming - uw patiënten bereiken altijd een medische professional
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-secondary hover:bg-orange-600 px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                        Plan Kennismaking
+                    </a>
+                    <a href="#diensten" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                        Ontdek Onze Diensten
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Medische professionals</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>24/7 beschikbaar</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Live binnen 2 weken</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Wat We Doen -->
+    <section id="diensten" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Wat We Voor U Doen</h2>
+                    <p class="text-xl text-gray-600">
+                        Complete telefonische ondersteuning voor uw commerciële zorgkliniek
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="text-4xl mb-4">📞</div>
+                        <h3 class="text-xl font-bold mb-3">Urgente Triage</h3>
+                        <p class="text-gray-700">
+                            Snelle beoordeling van spoedeisendheid bij klachten of mogelijke complicaties. 
+                            Doorverwijzing naar spoed indien nodig volgens Nederlandse Triage Standaard.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="text-4xl mb-4">👨‍⚕️</div>
+                        <h3 class="text-xl font-bold mb-3">Medische Waarneming</h3>
+                        <p class="text-gray-700">
+                            Beoordeling van klachten, vragen en zorgen van patiënten na behandelingen. 
+                            Professioneel advies over normaal herstelverloop en wanneer actie nodig is.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="text-4xl mb-4">💬</div>
+                        <h3 class="text-xl font-bold mb-3">Telefonische Consultatie</h3>
+                        <p class="text-gray-700">
+                            Beantwoorden van vragen over na-zorg, medicatie, herstel en resultaten. 
+                            Geruststelling voor ongeruste patiënten met heldere, begrijpelijke uitleg.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="text-4xl mb-4">📋</div>
+                        <h3 class="text-xl font-bold mb-3">Verslaglegging & Rapportage</h3>
+                        <p class="text-gray-700">
+                            Volledige documentatie van elk gesprek, direct beschikbaar in uw systeem 
+                            of via beveiligde rapportage. Altijd inzicht in wat er is besproken.
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Voor Wie -->
+    <section id="voor-wie" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Voor Welke Klinieken?</h2>
+                <p class="text-xl text-gray-600">
+                    Gespecialiseerde ondersteuning voor commerciële zorgklinieken
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Esthetiek -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Esthetische Klinieken</h3>
+                    <p class="text-gray-600 mb-6">
+                        Triage, waarneming en consultatie voor uw esthetische praktijk
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Urgentie-beoordeling bij mogelijke complicaties</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Adviesgesprekken over na-zorg en herstel</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Consultatie over resultaten en verwachtingen</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Geruststelling voor ongeruste patiënten</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tandheelkunde -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Tandartspraktijken</h3>
+                    <p class="text-gray-600 mb-6">
+                        Telefonische ondersteuning voor tandheelkundige zorg
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Spoedtriage bij acute pijnklachten</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Waarneming na behandelingen en ingrepen</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Consultatie over medicatie en herstel</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Advies bij zwelling of nabloeding</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Oogzorg -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Oogklinieken</h3>
+                    <p class="text-gray-600 mb-6">
+                        Medische telefonische ondersteuning oogheelkunde
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Triage urgente oogklachten en symptomen</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Post-operatieve waarneming LASIK/cataract</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Consultatie over herstelproces en resultaat</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Herkenning infecties en complicaties</span>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 text-center max-w-3xl mx-auto">
+                <p class="text-gray-600 mb-4">
+                    <strong>Ook geschikt voor:</strong> Plastische chirurgie • Dermatologie • 
+                    Fertiliteitsklinieken • Orthopedische klinieken • Haartransplantatie
+                </p>
+                <a href="contact.html" class="text-primary font-semibold hover:text-blue-800 inline-flex items-center gap-2">
+                    Staat uw specialisme er niet bij? Neem contact op
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Waarom DirectTriage -->
+    <section id="waarom" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <div class="max-w-5xl mx-auto">
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Waarom DirectTriage?</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold mb-3">Complete Dekking</h3>
+                        <p class="text-gray-700">
+                            Niet alleen urgente triage - ook routinematige waarneming, adviesvragen en consultaties. 
+                            Uw patiënten krijgen altijd het juiste antwoord.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100">
+                        <div class="text-4xl mb-4">👥</div>
+                        <h3 class="text-xl font-bold mb-3">Medische Professionals</h3>
+                        <p class="text-gray-700">
+                            Ervaren verpleegkundigen en doktersassistenten met specialistische training in uw vakgebied. 
+                            Geen callcenter, maar échte zorgprofessionals.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100">
+                        <div class="text-4xl mb-4">⚡</div>
+                        <h3 class="text-xl font-bold mb-3">Uw Team Kan Focussen</h3>
+                        <p class="text-gray-700">
+                            Laat telefonische zorg over aan specialisten. Uw team doet wat ze het beste kunnen: 
+                            behandelen en opereren. Geen verstoring meer.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h3 class="text-xl font-bold mb-3">Premium Uitstraling</h3>
+                        <p class="text-gray-700">
+                            Uw patiënten verdienen professionele bereikbaarheid. Altijd een vriendelijke, 
+                            deskundige stem aan de lijn. Dat straalt af op uw hele kliniek.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100">
+                        <div class="text-4xl mb-4">🔒</div>
+                        <h3 class="text-xl font-bold mb-3">Kwaliteit & Veiligheid</h3>
+                        <p class="text-gray-700">
+                            Werken volgens Nederlandse Triage Standaard (NTS), AVG-compliant, 
+                            volledige verslaglegging. Kwaliteit staat voorop.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100">
+                        <div class="text-4xl mb-4">💚</div>
+                        <h3 class="text-xl font-bold mb-3">Gemoedsrust</h3>
+                        <p class="text-gray-700">
+                            Voor uw patiënten: altijd bereikbaar. Voor uw personeel: écht vrij zijn. 
+                            Voor u: slapen zonder zorgen over gemiste oproepen.
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Uitdagingen & Oplossingen -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            
+            <div class="max-w-5xl mx-auto">
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Herkent U Dit?</h2>
+               <p class="text-xl text-gray-600 text-center mb-12">Uitdagingen die wij voor u oplossen</p>
+                
+                <div class="space-y-6">
+                    
+                    <!-- Uitdaging 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:w-1/2 bg-red-50 p-8 border-r-4 border-red-200">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-red-500 text-3xl flex-shrink-0">✗</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Verstoring van Uw Team</h4>
+                                        <p class="text-gray-700">
+                                            Medewerkers worden 's avonds en weekends gebeld met vragen 
+                                            die wachten kunnen tot morgen. Verstoring van privéleven en werk-privé balans.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 bg-green-50 p-8">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-green-600 text-3xl flex-shrink-0">✓</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Professionele Filter</h4>
+                                        <p class="text-gray-700">
+                                            Wij beoordelen elke oproep. Échte urgentie: direct doorverbinden. 
+                                            Routinevraag: netjes afgehandeld en gedocumenteerd. Uw team blijft ongestoord.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Uitdaging 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:w-1/2 bg-red-50 p-8 border-r-4 border-red-200">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-red-500 text-3xl flex-shrink-0">✗</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Gemiste Oproepen = Gemiste Patiënten</h4>
+                                        <p class="text-gray-700">
+                                            Patiënten bellen buiten kantooruren en krijgen geen gehoor. 
+                                            Ze zoeken een concurrent die wél bereikbaar is. Reputatieschade en omzetverlies.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 bg-green-50 p-8">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-green-600 text-3xl flex-shrink-0">✓</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Altijd Bereikbaar = Betrouwbaar Imago</h4>
+                                        <p class="text-gray-700">
+                                            Uw patiënten weten: deze kliniek is er altijd voor me. 
+                                            Dat schept vertrouwen, loyaliteit en positieve reviews. Premium service, premium reputatie.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Uitdaging 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:w-1/2 bg-red-50 p-8 border-r-4 border-red-200">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-red-500 text-3xl flex-shrink-0">✗</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Kwaliteitsrisico's</h4>
+                                        <p class="text-gray-700">
+                                            Vermoeide medewerkers aan de telefoon maken sneller fouten bij 
+                                            de beoordeling van klachten. Eén incident kan grote gevolgen hebben.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 bg-green-50 p-8">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-green-600 text-3xl flex-shrink-0">✓</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Uitgeruste Professionals</h4>
+                                        <p class="text-gray-700">
+                                            Onze medewerkers doen niets anders dan telefonische zorg. 
+                                            Ze zijn fris, getraind, gefocust en werken volgens vaste protocollen. Kwaliteit gegarandeerd.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Uitdaging 4 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="md:flex">
+                            <div class="md:w-1/2 bg-red-50 p-8 border-r-4 border-red-200">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-red-500 text-3xl flex-shrink-0">✗</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Niet Schaalbaar</h4>
+                                        <p class="text-gray-700">
+                                            Bij groei van uw kliniek moet u steeds meer personeel inzetten 
+                                            voor telefonische bereikbaarheid. Extra wervingskosten en organisatie.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 bg-green-50 p-8">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-green-600 text-3xl flex-shrink-0">✓</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Groei Mee Met Uw Praktijk</h4>
+                                        <p class="text-gray-700">
+                                            Wij schalen mee. Of u nu 10 of 100 gesprekken per maand heeft - 
+                                            wij zijn klaar voor uw groei. Geen extra wervingen of organisatie nodig.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-xl font-semibold mb-6">Klaar om dit anders aan te pakken?</p>
+                    <a href="contact.html" class="bg-primary hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold inline-block">
+                        Plan Kennismaking →
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Pakketten -->
+    <section id="pakketten" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Onze Pakketten</h2>
+                <p class="text-xl text-gray-600">
+                    Professionele bereikbaarheid die past bij uw kliniek
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- BASIS -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary transition">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Basis</h3>
+                        <p class="text-gray-600">Voor kleinere praktijken</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-5xl font-bold text-primary mb-2">€395</div>
+                        <div class="text-gray-600">per maand excl. BTW</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>20 gesprekken</strong> inclusief (triage, waarneming, consultatie)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Bereikbaarheid <strong>avond + weekend</strong> (ma-vr 17:00-23:00, za-zo 09:00-23:00)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Professionele medische medewerkers</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Standaard rapportage (maandelijks)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>2 maanden proefperiode</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm text-gray-600 mb-6">
+                        Extra gesprekken: €17,50<br>
+                        Nacht (23:00-07:00): +€295-445/maand
+                    </div>
+                    <a href="contact.html" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 rounded-lg font-semibold text-center">
+                        Meer Informatie
+                    </a>
+                </div>
+                
+                <!-- PLUS (Popular) -->
+                <div class="bg-primary text-white rounded-xl p-8 transform scale-105 shadow-2xl relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-6 py-2 rounded-full text-sm font-bold">
+                        MEEST GEKOZEN
+                    </div>
+                    <div class="text-center mb-6 mt-2">
+                        <h3 class="text-2xl font-bold mb-2">Plus</h3>
+                        <p class="text-blue-100">Voor groeiende klinieken</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-5xl font-bold mb-2">€695</div>
+                        <div class="text-blue-100">per maand excl. BTW</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>50 gesprekken</strong> inclusief</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>24/7 bereikbaarheid</strong> (avond + weekend + doordeweekse nachten)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Uitgebreide rapportage (wekelijks)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Persoonlijk aanspreekpunt</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Prioriteit support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>EPD/API koppeling</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm text-blue-100 mb-6">
+                        Extra gesprekken: €15,50<br>
+                        Volledige 24/7 nacht: +€150/maand
+                    </div>
+                    <a href="contact.html" class="block w-full bg-secondary hover:bg-orange-600 text-white py-3 rounded-lg font-semibold text-center">
+                        Kies Plus Pakket
+                    </a>
+                </div>
+                
+                <!-- PREMIUM -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-primary transition">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
+                        <p class="text-gray-600">Voor ketens & grote klinieken</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-4xl font-bold text-primary mb-2">Op maat</div>
+                        <div class="text-gray-600">vanaf €1.500/maand</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span><strong>Ongelimiteerde gesprekken</strong> (fair use)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Volledige <strong>24/7 dekking</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Dedicated accountmanager</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Real-time dashboard + analytics</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>White-label mogelijkheid</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Meertalig (NL/EN/FR/DE)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>SLA garanties</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 rounded-lg font-semibold text-center">
+                        Vraag Offerte Aan
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 max-w-3xl mx-auto">
+                <details class="bg-gray-50 p-6 rounded-lg mb-4">
+                    <summary class="font-semibold cursor-pointer">Wat houdt de 2 maanden proefperiode in?</summary>
+                    <p class="mt-4 text-gray-700">
+                        U kunt na 2 maanden zonder kosten stoppen als de samenwerking niet bevalt. 
+                        Dit geeft u de kans om onze dienstverlening te ervaren zonder lange verplichtingen.
+                    </p>
+                </details>
+                <details class="bg-gray-50 p-6 rounded-lg mb-4">
+                    <summary class="font-semibold cursor-pointer">Zijn er implementatiekosten?</summary>
+                    <p class="mt-4 text-gray-700">
+                        Nee, onboarding en technische setup zijn bij alle pakketten inbegrepen. 
+                        U betaalt alleen het maandelijkse pakket.
+                    </p>
+                </details>
+                <details class="bg-gray-50 p-6 rounded-lg mb-4">
+                    <summary class="font-semibold cursor-pointer">Wat als mijn volume groeit?</summary>
+                    <p class="mt-4 text-gray-700">
+                        U kunt altijd upgraden naar een groter pakket. Bij structurele overschrijding 
+                        adviseren wij proactief een passender pakket.
+                    </p>
+                </details>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary to-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Klaar Voor Professionele Bereikbaarheid?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+                Plan een vrijblijvend kennismakingsgesprek. We bespreken uw situatie 
+                en maken een voorstel op maat. Geen verplichtingen, gewoon een goed gesprek.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg inline-block">
+                    Plan Gratis Kennismaking
+                </a>
+                <a href="tel:0631195171" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-bold text-lg inline-block">
+                    Bel 06 311 951 71
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4">
+                        DIRECT<span class="text-secondary">│</span>TRIAGE
+                    </div>
+                    <p class="text-sm">
+                        Professionele triage, waarneming en consultatie voor commerciële zorgklinieken.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Diensten</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#diensten" class="hover:text-white">Wat We Doen</a></li>
+                        <li><a href="#voor-wie" class="hover:text-white">Voor Wie</a></li>
+                        <li><a href="#pakketten" class="hover:text-white">Pakketten & Prijzen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Over Ons</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.teletriage.nl" class="hover:text-white">TeleTriage BV</a></li>
+                        <li><a href="contact.html" class="hover:text-white">
+                  <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy & AVG</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <a href="tel:0631195171" class="hover:text-white">06 311 951 71</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <a href="mailto:info@teletriage.nl" class="hover:text-white">info@teletriage.nl</a>
+                        </li>
+                        <li class="mt-4">
+                            <strong class="text-white">Bereikbaar:</strong><br>
+                            Ma-Vr 08:00-17:00<br>
+                            <span class="text-green-400">Spoedzaken: 24/7</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>© 2025 DirectTriage - Onderdeel van TeleTriage BV | Alle rechten voorbehouden</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
