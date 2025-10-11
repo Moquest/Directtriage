@@ -103,9 +103,6 @@
 
     <!-- Hero -->
     <section class="hero relative text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0 bg-grid-white/[0.2]"></div>
-        </div>
         <div class="container mx-auto px-4 py-24 md:py-32 relative">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -122,16 +119,45 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="contact.html" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-center transition shadow-lg">
-                            Plan Kennismaking
+                        <a href="#pakketten" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-center transition shadow-lg">
+                            Bekijk Pakketten
                         </a>
-                        <a href="#diensten" class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-center transition">
-                            Meer Informatie
+                        <a href="contact.html" class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-center transition">
+                            Plan Kennismaking
                         </a>
                     </div>
                 </div>
                 
-                        <!-- Afbeelding zit nu als achtergrond -->
+                <!-- USP Box -->
+                <div class="hidden md:block">
+                    <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-10 text-gray-900 shadow-2xl">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl font-bold text-primary mb-4">17:00 → 23:00</div>
+                            <div class="h-1 w-24 bg-secondary mx-auto mb-6"></div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-center">
+                            Uw kliniek sluit.<br/>Wij nemen over.
+                        </h3>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span class="text-gray-700">Avonden & weekenden</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span class="text-gray-700">Nachten op aanvraag</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span class="text-gray-700">Vanaf €395/maand</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#pakketten" class="block text-center w-full bg-primary hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition">
+                            Bekijk Pakketten →
+                        </a>
                     </div>
                 </div>
             </div>
@@ -152,12 +178,6 @@
                     <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                     </svg>
-                    <span class="font-medium">24/7 beschikbaar</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
                     <span class="font-medium">Nederlandse Triage Standaard</span>
                 </div>
                 <div class="flex items-center gap-2">
@@ -170,8 +190,77 @@
         </div>
     </section>
 
+    <!-- Het Probleem -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                    Uw kliniek sluit om 17:00. Uw patiënten niet.
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Zonder DirectTriage -->
+                    <div class="bg-red-50 rounded-2xl p-8 border-2 border-red-100">
+                        <h3 class="text-xl font-bold text-red-900 mb-6">Zonder DirectTriage</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="text-red-500 text-xl">✗</span>
+                                <p class="text-gray-700">Patiënt belt om 19:00 met vraag na behandeling</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-red-500 text-xl">✗</span>
+                                <p class="text-gray-700">Komt bij huisartsenpost terecht (onnodige drukte)</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-red-500 text-xl">✗</span>
+                                <p class="text-gray-700">Of belt uw collega thuis (verstoring privéleven)</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-red-500 text-xl">✗</span>
+                                <p class="text-gray-700">Of maakt zich zorgen (slechte ervaring)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Met DirectTriage -->
+                    <div class="bg-green-50 rounded-2xl p-8 border-2 border-green-100">
+                        <h3 class="text-xl font-bold text-green-900 mb-6">Met DirectTriage</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-500 text-xl">✓</span>
+                                <p class="text-gray-700">DirectTriage neemt direct op</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-500 text-xl">✓</span>
+                                <p class="text-gray-700">Triage door ervaren zorgprofessional</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-500 text-xl">✓</span>
+                                <p class="text-gray-700">Verwijzing naar u indien nodig</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-green-500 text-xl">✓</span>
+                                <p class="text-gray-700">Tevreden patiënt, ontlast team</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-lg text-gray-600 mb-6">
+                        <strong>Bereikbaar wanneer ú het nodig heeft:</strong><br/>
+                        Avonden & weekenden tegen scherp tarief. Nachten & kantooruren op aanvraag.
+                    </p>
+                    <a href="#pakketten" class="inline-block bg-primary hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition">
+                        Bekijk Onze Pakketten
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Diensten -->
-    <section id="diensten" class="py-20 bg-white">
+    <section id="diensten" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Complete Telefonische Ondersteuning</h2>
@@ -182,7 +271,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 
-                <div class="text-center">
+                <div class="text-center bg-white rounded-xl p-6">
                     <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -194,7 +283,7 @@
                     </p>
                 </div>
                 
-                <div class="text-center">
+                <div class="text-center bg-white rounded-xl p-6">
                     <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -206,7 +295,7 @@
                     </p>
                 </div>
                 
-                <div class="text-center">
+                <div class="text-center bg-white rounded-xl p-6">
                     <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
@@ -218,7 +307,7 @@
                     </p>
                 </div>
                 
-                <div class="text-center">
+                <div class="text-center bg-white rounded-xl p-6">
                     <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -235,7 +324,7 @@
     </section>
 
     <!-- Specialismen -->
-    <section id="specialismen" class="py-20 bg-gray-50">
+    <section id="specialismen" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             
             <div class="max-w-3xl mx-auto text-center mb-16">
@@ -248,7 +337,7 @@
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 
                 <!-- Esthetiek -->
-                <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition">
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition">
                     <h3 class="text-2xl font-bold mb-4">Esthetische Klinieken</h3>
                     <p class="text-gray-600 mb-6">
                         Triage, waarneming en consultatie voor uw esthetische praktijk.
@@ -276,7 +365,7 @@
                 </div>
                 
                 <!-- Tandheelkunde -->
-                <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition">
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition">
                     <h3 class="text-2xl font-bold mb-4">Tandartspraktijken</h3>
                     <p class="text-gray-600 mb-6">
                         Telefonische ondersteuning voor tandheelkundige zorg.
@@ -304,7 +393,7 @@
                 </div>
                 
                 <!-- Oogzorg -->
-                <div class="bg-white rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition">
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-primary hover:shadow-xl transition">
                     <h3 class="text-2xl font-bold mb-4">Oogklinieken</h3>
                     <p class="text-gray-600 mb-6">
                         Medische telefonische ondersteuning oogheelkunde.
@@ -337,66 +426,8 @@
                 <p class="text-gray-600 mb-4">
                     <strong>Ook geschikt voor:</strong> Plastische chirurgie, Dermatologie, Fertiliteitsklinieken, Orthopedische klinieken
                 </p>
-                <a href="contact.html" class="text-primary font-semibold hover:text-blue-800 inline-flex items-center gap-2">
-                    Staat uw specialisme er niet bij?
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
             </div>
             
-        </div>
-    </section>
-
-    <!-- Waarom DirectTriage -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Waarom DirectTriage?</h2>
-                <p class="text-lg text-gray-600">
-                    Professionele telefonische zorg die uw kliniek versterkt en uw team ontlast.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Medische Expertise</h3>
-                    <p class="text-gray-600">
-                        Ervaren verpleegkundigen en doktersassistenten met specialistische training. Geen callcenter, échte zorgprofessionals.
-                    </p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Gegarandeerde Kwaliteit</h3>
-                    <p class="text-gray-600">
-                        Werken volgens Nederlandse Triage Standaard, AVG-compliant, volledige verslaglegging. Kwaliteit staat voorop.
-                    </p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Direct Ontlasting</h3>
-                    <p class="text-gray-600">
-                        Uw team doet waar ze goed in zijn: behandelen. Wij doen waar wij goed in zijn: telefonische zorg. Geen verstoring meer.
-                    </p>
-                </div>
-                
-            </div>
         </div>
     </section>
 
@@ -405,9 +436,9 @@
         <div class="container mx-auto px-4">
             
             <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Transparante Prijzen</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Transparante Pakketten</h2>
                 <p class="text-lg text-gray-600">
-                    Professionele bereikbaarheid die past bij uw kliniek. Alle prijzen excl. BTW.
+                    Bereikbaar wanneer ú het nodig heeft. Simpel, helder, zonder verrassingen.
                 </p>
             </div>
             
@@ -421,49 +452,38 @@
                     </div>
                     
                     <div class="text-center mb-6">
-                        <div class="text-4xl font-bold text-primary mb-2">€495</div>
+                        <div class="text-4xl font-bold text-primary mb-2">€395</div>
                         <div class="text-gray-600">per maand</div>
-                        <div class="text-sm text-gray-500 mt-2">+ gesprekkosten</div>
                     </div>
                     
                     <div class="space-y-4 mb-8">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">24/7 bereikbaarheid</span>
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <p class="text-sm font-semibold text-primary mb-2">📞 Tot 20 gesprekken/maand</p>
+                            <p class="text-sm text-gray-600">ma-vr 17:00-23:00<br/>weekenden 09:00-23:00</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Triage volgens NTS</span>
+                        
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700">✓ Triage volgens NTS</p>
+                            <p class="text-gray-700">✓ Volledige verslaglegging</p>
+                            <p class="text-gray-700">✓ EPD-koppeling</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Volledige verslaglegging</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Koppeling uw EPD</span>
-                        </div>
+                        
                         <div class="pt-4 border-t border-gray-200">
-                            <p class="text-sm text-gray-600">
-                                <strong>Extra:</strong> €17,50/gesprek
+                            <p class="text-sm text-gray-600 mb-2">
+                                <strong>Extra opties:</strong>
                             </p>
+                            <p class="text-xs text-gray-500">• Extra gesprekken: €17,50/stuk</p>
+                            <p class="text-xs text-gray-500">• Nachtdienst: vanaf €150/nacht</p>
+                            <p class="text-xs text-gray-500">• Kantooruren: op aanvraag</p>
                         </div>
                     </div>
                     
                     <a href="contact.html" class="block text-center w-full bg-primary hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition">
-                        Plan Kennismaking
+                        Vraag Aan
                     </a>
                 </div>
                 
-                <!-- Professional -->
+                <!-- Groei -->
                 <div class="bg-white rounded-2xl p-8 border-2 border-primary shadow-xl relative">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
                         <span class="bg-secondary text-white text-sm font-bold px-4 py-1 rounded-full">
@@ -472,45 +492,34 @@
                     </div>
                     
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <h3 class="text-2xl font-bold mb-2">Groei</h3>
                         <p class="text-gray-600 text-sm">Voor groeiende klinieken</p>
                     </div>
                     
                     <div class="text-center mb-6">
-                        <div class="text-4xl font-bold text-primary mb-2">€895</div>
+                        <div class="text-4xl font-bold text-primary mb-2">€695</div>
                         <div class="text-gray-600">per maand</div>
-                        <div class="text-sm text-gray-500 mt-2">+ gesprekkosten</div>
                     </div>
                     
                     <div class="space-y-4 mb-8">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm"><strong>Alles uit Starter</strong></span>
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <p class="text-sm font-semibold text-primary mb-2">📞 Tot 50 gesprekken/maand</p>
+                            <p class="text-sm text-gray-600">ma-vr 17:00-23:00<br/>weekenden 09:00-23:00<br/>feestdagen inclusief</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Dedicated contactpersoon</span>
+                        
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700">✓ Alles uit Starter</p>
+                            <p class="text-gray-700">✓ Vaste contactpersoon</p>
+                            <p class="text-gray-700">✓ Maandelijkse rapportage</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Maandelijkse rapportage</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Voorrang bij spoed</span>
-                        </div>
+                        
                         <div class="pt-4 border-t border-gray-200">
-                            <p class="text-sm text-gray-600">
-                                <strong>Extra:</strong> €15,50/gesprek
+                            <p class="text-sm text-gray-600 mb-2">
+                                <strong>Extra opties:</strong>
                             </p>
+                            <p class="text-xs text-gray-500">• Extra gesprekken: €15,50/stuk</p>
+                            <p class="text-xs text-gray-500">• Nachtdienst: vanaf €150/nacht</p>
+                            <p class="text-xs text-gray-500">• Kantooruren: op aanvraag</p>
                         </div>
                     </div>
                     
@@ -519,53 +528,43 @@
                     </a>
                 </div>
                 
-                <!-- Enterprise -->
+                <!-- Compleet -->
                 <div class="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-primary hover:shadow-xl transition">
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <h3 class="text-2xl font-bold mb-2">Compleet</h3>
                         <p class="text-gray-600 text-sm">Voor ketens & grote klinieken</p>
                     </div>
                     
                     <div class="text-center mb-6">
-                        <div class="text-4xl font-bold text-primary mb-2">Custom</div>
-                        <div class="text-gray-600">vanaf €1.500/maand</div>
-                        <div class="text-sm text-gray-500 mt-2">alles inclusief</div>
+                        <div class="text-4xl font-bold text-primary mb-2">€1.495</div>
+                        <div class="text-gray-600">per maand</div>
                     </div>
                     
                     <div class="space-y-4 mb-8">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm"><strong>Alles uit Professional</strong></span>
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <p class="text-sm font-semibold text-primary mb-2">📞 Onbeperkt gesprekken</p>
+                            <p class="text-sm text-gray-600">24/7 volledige dekking<br/>(inclusief nachten!)</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Multi-locatie ondersteuning</span>
+                        
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700">✓ Alles uit Groei</p>
+                            <p class="text-gray-700">✓ Multi-locatie ondersteuning</p>
+                            <p class="text-gray-700">✓ Dedicated team</p>
+                            <p class="text-gray-700">✓ SLA-garanties</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">Dedicated team</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-sm">SLA garanties</span>
-                        </div>
+                        
                         <div class="pt-4 border-t border-gray-200">
-                            <p class="text-sm text-gray-600">
-                                <strong>Gesprekken inclusief</strong>
+                            <p class="text-sm text-gray-600 mb-2">
+                                <strong>Volledig op maat:</strong>
                             </p>
+                            <p class="text-xs text-gray-500">• 24/7 inclusief nachten</p>
+                            <p class="text-xs text-gray-500">• Extra locaties mogelijk</p>
+                            <p class="text-xs text-gray-500">• Kantooruren: op aanvraag</p>
                         </div>
                     </div>
                     
                     <a href="contact.html" class="block text-center w-full bg-primary hover:bg-blue-800 text-white py-3 rounded-lg font-semibold transition">
-                        Vraag Offerte Aan
+                        Vraag Offerte
                     </a>
                 </div>
                 
@@ -664,4 +663,3 @@
 
 </body>
 </html>
-                            
