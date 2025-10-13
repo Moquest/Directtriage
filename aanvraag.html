@@ -19,6 +19,14 @@
             }
         }
     </script>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("y0JeFnY7BfRb3GqVP"); // Vervang met jouw public key
+        })();
+    </script>
 </head>
 <body class="bg-gray-50">
 
@@ -68,19 +76,19 @@
                 
                 <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                     
-                    <!-- Formspree Form -->
-                    <form action="https://formspree.io/f/xwprwolb" method="POST" class="space-y-6">
-                        
-                        <!-- Hidden fields -->
-                        <input type="hidden" name="_subject" id="form-subject" value="Nieuwe pakket aanvraag - DirectTriage">
-                        <input type="hidden" name="pakket" id="form-pakket" value="">
-                        <input type="hidden" name="prijs" id="form-prijs" value="">
-                        
-                        <!-- Auto-reply naar klant -->
-                        <input type="hidden" name="_autoresponse" value="Beste klant, bedankt voor je aanvraag! We nemen binnen 24 uur contact met je op. Met vriendelijke groet, DirectTriage">
-                        
-                        <!-- Redirect na submit -->
-                        <input type="hidden" name="_next" value="https://directtriage.netlify.app/bedankt.html">
+                    <!-- Success/Error Messages -->
+                    <div id="success-message" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <p class="text-green-800 font-semibold">✓ Aanvraag succesvol verzonden!</p>
+                        <p class="text-green-700 text-sm mt-1">Je ontvangt een bevestigingsmail. We nemen binnen 24 uur contact op.</p>
+                    </div>
+                    
+                    <div id="error-message" class="hidden mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <p class="text-red-800 font-semibold">⚠ Er ging iets mis</p>
+                        <p class="text-red-700 text-sm mt-1">Probeer het opnieuw of bel ons op 06 311 951 71</p>
+                    </div>
+                    
+                    <!-- Form -->
+                    <form id="aanvraag-form" class="space-y-6">
                         
                         <!-- Bedrijfsnaam -->
                         <div>
@@ -185,6 +193,10 @@
                             ></textarea>
                         </div>
                         
+                        <!-- Hidden fields voor pakket info -->
+                        <input type="hidden" id="pakket" name="pakket" value="">
+                        <input type="hidden" id="prijs" name="prijs" value="">
+                        
                         <!-- Privacy -->
                         <div class="flex items-start">
                             <input 
@@ -202,9 +214,11 @@
                         <!-- Submit Button -->
                         <button 
                             type="submit"
-                            class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105"
+                            id="submit-btn"
+                            class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            Aanvraag Versturen
+                            <span id="btn-text">Aanvraag Versturen</span>
+                            <span id="btn-loading" class="hidden">Bezig met versturen...</span>
                         </button>
                         
                         <p class="text-sm text-gray-500 text-center">
@@ -243,8 +257,12 @@
         </div>
     </footer>
 
-    <!-- JavaScript voor dynamische pakket info -->
+    <!-- JavaScript -->
     <script>
+        // EmailJS configuratie
+        const EMAILJS_SERVICE_ID = 'y0JeFnY7BfRb3GqVP';  // Vervang dit!
+        const EMAILJS_TEMPLATE_CLIENT = 'template_k04ctgs';  // Voor klant
+        
         // Pakket data
         const packages = {
             'starter': {
@@ -269,10 +287,77 @@
         if (packages[selectedPackage]) {
             document.getElementById('package-name').textContent = packages[selectedPackage].name;
             document.getElementById('package-price').textContent = packages[selectedPackage].price;
-            document.getElementById('form-pakket').value = packages[selectedPackage].name;
-            document.getElementById('form-prijs').value = packages[selectedPackage].price;
-            document.getElementById('form-subject').value = `Nieuwe aanvraag: ${packages[selectedPackage].name}`;
+            document.getElementById('pakket').value = packages[selectedPackage].name;
+            document.getElementById('prijs').value = packages[selectedPackage].price;
         }
+
+        // Form submission
+        document.getElementById('aanvraag-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // UI feedback
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const btnLoading = document.getElementById('btn-loading');
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            
+            // Disable button
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            
+            // Hide messages
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+            
+            // Form data
+            const formData = {
+                bedrijfsnaam: document.getElementById('bedrijfsnaam').value,
+                naam: document.getElementById('naam').value,
+                email: document.getElementById('email').value,
+                telefoon: document.getElementById('telefoon').value,
+                medewerkers: document.getElementById('medewerkers').value,
+                startdatum: document.getElementById('startdatum').value || 'Niet opgegeven',
+                bericht: document.getElementById('bericht').value || 'Geen aanvullende opmerkingen',
+                pakket: document.getElementById('pakket').value,
+                prijs: document.getElementById('prijs').value
+            };
+            
+            // Verstuur email naar admin (jou)
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, formData)
+                .then(function() {
+                    // Verstuur bevestiging naar klant
+                    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, formData);
+                })
+                .then(function() {
+                    // Success!
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('hidden');
+                    btnLoading.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                    
+                    // Reset form
+                    document.getElementById('aanvraag-form').reset();
+                    
+                    // Scroll to success message
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Redirect na 3 seconden
+                    setTimeout(function() {
+                        window.location.href = 'bedankt.html';
+                    }, 3000);
+                })
+                .catch(function(error) {
+                    // Error
+                    console.error('Error:', error);
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('hidden');
+                    btnLoading.classList.add('hidden');
+                    errorMsg.classList.remove('hidden');
+                    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+        });
     </script>
 
 </body>
