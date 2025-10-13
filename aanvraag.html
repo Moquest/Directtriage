@@ -20,11 +20,11 @@
         }
     </script>
     
-    <!-- EmailJS -->
+    <!-- EmailJS (alleen voor klant bevestiging) -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            emailjs.init("y0JeFnY7BfRb3GqVP"); // Vervang met jouw public key
+            emailjs.init("y0JeFnY7BfRb3GqVP"); // Vervang!
         })();
     </script>
 </head>
@@ -76,19 +76,15 @@
                 
                 <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                     
-                    <!-- Success/Error Messages -->
-                    <div id="success-message" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <p class="text-green-800 font-semibold">✓ Aanvraag succesvol verzonden!</p>
-                        <p class="text-green-700 text-sm mt-1">Je ontvangt een bevestigingsmail. We nemen binnen 24 uur contact op.</p>
-                    </div>
-                    
-                    <div id="error-message" class="hidden mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                        <p class="text-red-800 font-semibold">⚠ Er ging iets mis</p>
-                        <p class="text-red-700 text-sm mt-1">Probeer het opnieuw of bel ons op 06 311 951 71</p>
-                    </div>
-                    
-                    <!-- Form -->
-                    <form id="aanvraag-form" class="space-y-6">
+                    <!-- Netlify Form met JavaScript enhancement -->
+                    <form name="pakket-aanvraag" method="POST" data-netlify="true" id="aanvraag-form" class="space-y-6">
+                        
+                        <!-- Netlify required -->
+                        <input type="hidden" name="form-name" value="pakket-aanvraag">
+                        
+                        <!-- Hidden fields voor pakket info -->
+                        <input type="hidden" name="pakket" id="form-pakket" value="">
+                        <input type="hidden" name="prijs" id="form-prijs" value="">
                         
                         <!-- Bedrijfsnaam -->
                         <div>
@@ -193,10 +189,6 @@
                             ></textarea>
                         </div>
                         
-                        <!-- Hidden fields voor pakket info -->
-                        <input type="hidden" id="pakket" name="pakket" value="">
-                        <input type="hidden" id="prijs" name="prijs" value="">
-                        
                         <!-- Privacy -->
                         <div class="flex items-start">
                             <input 
@@ -215,10 +207,9 @@
                         <button 
                             type="submit"
                             id="submit-btn"
-                            class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                            class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105"
                         >
-                            <span id="btn-text">Aanvraag Versturen</span>
-                            <span id="btn-loading" class="hidden">Bezig met versturen...</span>
+                            Aanvraag Versturen
                         </button>
                         
                         <p class="text-sm text-gray-500 text-center">
@@ -259,9 +250,9 @@
 
     <!-- JavaScript -->
     <script>
-        // EmailJS configuratie
-        const EMAILJS_SERVICE_ID = 'y0JeFnY7BfRb3GqVP';  // Vervang dit!
-        const EMAILJS_TEMPLATE_CLIENT = 'template_k04ctgs';  // Voor klant
+        // EmailJS configuratie (alleen voor klant bevestiging)
+        const EMAILJS_SERVICE_ID = 'y0JeFnY7BfRb3GqVP';  // Vervang!
+        const EMAILJS_TEMPLATE_CLIENT = 'template_k04ctgs';  // Vervang!
         
         // Pakket data
         const packages = {
@@ -279,84 +270,63 @@
             }
         };
 
-        // Haal pakket uit URL
+        // Haal pakket uit URL en update UI
         const urlParams = new URLSearchParams(window.location.search);
         const selectedPackage = urlParams.get('pakket') || 'starter';
 
-        // Update UI
         if (packages[selectedPackage]) {
             document.getElementById('package-name').textContent = packages[selectedPackage].name;
             document.getElementById('package-price').textContent = packages[selectedPackage].price;
-            document.getElementById('pakket').value = packages[selectedPackage].name;
-            document.getElementById('prijs').value = packages[selectedPackage].price;
+            document.getElementById('form-pakket').value = packages[selectedPackage].name;
+            document.getElementById('form-prijs').value = packages[selectedPackage].price;
         }
 
-        // Form submission
+        // Form submission handler
         document.getElementById('aanvraag-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // UI feedback
+            const form = e.target;
             const submitBtn = document.getElementById('submit-btn');
-            const btnText = document.getElementById('btn-text');
-            const btnLoading = document.getElementById('btn-loading');
-            const successMsg = document.getElementById('success-message');
-            const errorMsg = document.getElementById('error-message');
             
             // Disable button
             submitBtn.disabled = true;
-            btnText.classList.add('hidden');
-            btnLoading.classList.remove('hidden');
+            submitBtn.textContent = 'Bezig met versturen...';
             
-            // Hide messages
-            successMsg.classList.add('hidden');
-            errorMsg.classList.add('hidden');
-            
-            // Form data
-            const formData = {
-                bedrijfsnaam: document.getElementById('bedrijfsnaam').value,
-                naam: document.getElementById('naam').value,
-                email: document.getElementById('email').value,
-                telefoon: document.getElementById('telefoon').value,
-                medewerkers: document.getElementById('medewerkers').value,
-                startdatum: document.getElementById('startdatum').value || 'Niet opgegeven',
-                bericht: document.getElementById('bericht').value || 'Geen aanvullende opmerkingen',
-                pakket: document.getElementById('pakket').value,
-                prijs: document.getElementById('prijs').value
+            // Verzamel form data
+            const formData = new FormData(form);
+            const data = {
+                bedrijfsnaam: formData.get('bedrijfsnaam'),
+                naam: formData.get('naam'),
+                email: formData.get('email'),
+                telefoon: formData.get('telefoon'),
+                medewerkers: formData.get('medewerkers'),
+                startdatum: formData.get('startdatum') || 'Niet opgegeven',
+                bericht: formData.get('bericht') || 'Geen aanvullende opmerkingen',
+                pakket: formData.get('pakket'),
+                prijs: formData.get('prijs')
             };
             
-            // Verstuur email naar admin (jou)
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, formData)
-                .then(function() {
-                    // Verstuur bevestiging naar klant
-                    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, formData);
-                })
-                .then(function() {
-                    // Success!
-                    submitBtn.disabled = false;
-                    btnText.classList.remove('hidden');
-                    btnLoading.classList.add('hidden');
-                    successMsg.classList.remove('hidden');
-                    
-                    // Reset form
-                    document.getElementById('aanvraag-form').reset();
-                    
-                    // Scroll to success message
-                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Redirect na 3 seconden
-                    setTimeout(function() {
-                        window.location.href = 'bedankt.html';
-                    }, 3000);
-                })
+            // Stuur bevestiging naar klant (in achtergrond, blokkeer niet)
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, data)
                 .catch(function(error) {
-                    // Error
-                    console.error('Error:', error);
-                    submitBtn.disabled = false;
-                    btnText.classList.remove('hidden');
-                    btnLoading.classList.add('hidden');
-                    errorMsg.classList.remove('hidden');
-                    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    console.log('Email naar klant gefaald (niet kritiek):', error);
                 });
+            
+            // Submit naar Netlify (wacht hier niet op email)
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Direct doorsturen naar bedankt pagina
+                window.location.href = 'bedankt.html';
+            })
+            .catch((error) => {
+                alert('Er ging iets mis. Probeer het opnieuw of bel ons op 06 311 951 71');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Aanvraag Versturen';
+            });
         });
     </script>
 
