@@ -6,62 +6,56 @@
     <title>Pakket Aanvragen - DirectTriage</title>
     <meta name="description" content="Vraag uw DirectTriage pakket aan. Binnen 24 uur nemen we contact met u op.">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#F97316',
+                        primary: '#1e40af',
                     }
                 }
             }
         }
     </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50">
 
     <!-- Header -->
-    <header class="bg-white border-b border-gray-200">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-primary tracking-tight">
-                    DIRECT<span class="text-secondary">│</span>TRIAGE
-                </a>
-                <a href="tel:0631195171" class="text-primary font-semibold hover:text-blue-800 transition">
-                    06 311 951 71
+                <a href="index.html" class="text-2xl font-bold text-primary">DirectTriage</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
+                    <a href="index.html#diensten" class="text-gray-700 hover:text-primary transition">Diensten</a>
+                    <a href="index.html#pakketten" class="text-gray-700 hover:text-primary transition">Pakketten</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
+                </div>
+                <a href="tel:0631195171" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-800 transition">
+                    Bel Direct
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero met Pakket Info -->
-    <section class="bg-gradient-to-br from-primary to-blue-700 text-white py-16">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-blue-800 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
                     Vraag Uw Pakket Aan
                 </h1>
-                <p class="text-lg text-blue-100 mb-6">
-                    Vul het formulier in en we nemen binnen 24 uur contact met u op voor een vrijblijvend gesprek.
+                <p class="text-xl text-blue-100 mb-8">
+                    Vul het formulier in en we nemen binnen 24 uur contact met u op
                 </p>
                 
                 <!-- Dynamic Package Info -->
                 <div id="package-info" class="bg-white/10 backdrop-blur-sm rounded-xl p-6 inline-block">
                     <div class="text-sm text-blue-200 mb-2">Gekozen pakket:</div>
-                    <div id="package-name" class="text-2xl font-bold">Starter</div>
-                    <div id="package-price" class="text-xl mt-2">€395/maand</div>
+                    <div id="package-name" class="text-2xl font-bold">-</div>
+                    <div id="package-price" class="text-xl mt-2">-</div>
                 </div>
             </div>
         </div>
@@ -74,150 +68,212 @@
                 
                 <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                     
-                    <!-- Web3Forms Formulier -->
-<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-    
-    <!-- Web3Forms Access Key - VERVANG MET JOUW KEY! -->
-    <input type="hidden" name="access_key" value="59c9e73c-3a2f-463b-8885-a8a2909386fe">
-    
-    <!-- Auto-reply naar klant -->
-    <input type="hidden" name="from_name" value="DirectTriage">
-    <input type="hidden" name="subject" id="email-subject" value="Pakket aanvraag ontvangen">
-    
-    <!-- Redirect na submit -->
-    <input type="hidden" name="redirect" value="https://directtriage.netlify.app/bedankt.html">
-    
-    <!-- Pakket info (hidden, filled by JavaScript) -->
-    <input type="hidden" name="pakket" id="form-pakket" value="starter">
-    <input type="hidden" name="prijs" id="form-prijs" value="€395/maand">
-    
-    <!-- Bedrijfsnaam -->
-    <div>
-        <label for="bedrijfsnaam" class="block text-sm font-semibold text-gray-700 mb-2">
-            Bedrijfsnaam *
-        </label>
-        <input 
-            type="text" 
-            id="bedrijfsnaam" 
-            name="bedrijfsnaam" 
-            required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-    </div>
-    
-    <!-- Contactpersoon -->
-    <div>
-        <label for="naam" class="block text-sm font-semibold text-gray-700 mb-2">
-            Naam contactpersoon *
-        </label>
-        <input 
-            type="text" 
-            id="naam" 
-            name="naam" 
-            required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-    </div>
-    
-    <!-- Email -->
-    <div>
-        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-            E-mailadres *
-        </label>
-        <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-        <p class="text-sm text-gray-500 mt-1">Hierop ontvang je de bevestiging</p>
-    </div>
-    
-    <!-- Telefoon -->
-    <div>
-        <label for="telefoon" class="block text-sm font-semibold text-gray-700 mb-2">
-            Telefoonnummer *
-        </label>
-        <input 
-            type="tel" 
-            id="telefoon" 
-            name="telefoon" 
-            required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-    </div>
-    
-    <!-- Aantal medewerkers -->
-    <div>
-        <label for="medewerkers" class="block text-sm font-semibold text-gray-700 mb-2">
-            Aantal medewerkers *
-        </label>
-        <select 
-            id="medewerkers" 
-            name="medewerkers" 
-            required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-            <option value="">Selecteer...</option>
-            <option value="1-10">1-10 medewerkers</option>
-            <option value="11-50">11-50 medewerkers</option>
-            <option value="51-100">51-100 medewerkers</option>
-            <option value="100+">Meer dan 100 medewerkers</option>
-        </select>
-    </div>
-    
-    <!-- Gewenste startdatum -->
-    <div>
-        <label for="startdatum" class="block text-sm font-semibold text-gray-700 mb-2">
-            Gewenste startdatum
-        </label>
-        <input 
-            type="date" 
-            id="startdatum" 
-            name="startdatum"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-        >
-    </div>
-    
-    <!-- Opmerkingen -->
-    <div>
-        <label for="bericht" class="block text-sm font-semibold text-gray-700 mb-2">
-            Aanvullende opmerkingen of vragen
-        </label>
-        <textarea 
-            id="bericht" 
-            name="bericht" 
-            rows="4"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="Bijvoorbeeld: specifieke wensen, vragen over het pakket..."
-        ></textarea>
-    </div>
-    
-    <!-- Privacy -->
-    <div class="flex items-start">
-        <input 
-            type="checkbox" 
-            id="privacy" 
-            name="privacy" 
-            required
-            class="mt-1 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-        >
-        <label for="privacy" class="ml-2 text-sm text-gray-600">
-            Ik ga akkoord met de <a href="#" class="text-primary hover:underline">privacyverklaring</a> *
-        </label>
-    </div>
-    
-    <!-- Submit Button -->
-    <button 
-        type="submit"
-        class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105"
-    >
-        Aanvraag Versturen
-    </button>
-    
-    <p class="text-sm text-gray-500 text-center">
-        We nemen binnen 24 uur contact met je op
-    </p>
-    
-</form>
+                    <!-- Formspree Form -->
+                    <form action="https://formspree.io/f/xwprwolb" method="POST" class="space-y-6">
+                        
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="_subject" id="form-subject" value="Nieuwe pakket aanvraag - DirectTriage">
+                        <input type="hidden" name="pakket" id="form-pakket" value="">
+                        <input type="hidden" name="prijs" id="form-prijs" value="">
+                        
+                        <!-- Auto-reply naar klant -->
+                        <input type="hidden" name="_autoresponse" value="Beste klant, bedankt voor je aanvraag! We nemen binnen 24 uur contact met je op. Met vriendelijke groet, DirectTriage">
+                        
+                        <!-- Redirect na submit -->
+                        <input type="hidden" name="_next" value="https://directtriage.netlify.app/bedankt.html">
+                        
+                        <!-- Bedrijfsnaam -->
+                        <div>
+                            <label for="bedrijfsnaam" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Bedrijfsnaam *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="bedrijfsnaam" 
+                                name="bedrijfsnaam" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                        </div>
+                        
+                        <!-- Contactpersoon -->
+                        <div>
+                            <label for="naam" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Naam contactpersoon *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="naam" 
+                                name="naam" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                E-mailadres *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                            <p class="text-sm text-gray-500 mt-1">Hierop ontvang je de bevestiging</p>
+                        </div>
+                        
+                        <!-- Telefoon -->
+                        <div>
+                            <label for="telefoon" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Telefoonnummer *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="telefoon" 
+                                name="telefoon" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                        </div>
+                        
+                        <!-- Aantal medewerkers -->
+                        <div>
+                            <label for="medewerkers" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Aantal medewerkers *
+                            </label>
+                            <select 
+                                id="medewerkers" 
+                                name="medewerkers" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                                <option value="">Selecteer...</option>
+                                <option value="1-10">1-10 medewerkers</option>
+                                <option value="11-50">11-50 medewerkers</option>
+                                <option value="51-100">51-100 medewerkers</option>
+                                <option value="100+">Meer dan 100 medewerkers</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Gewenste startdatum -->
+                        <div>
+                            <label for="startdatum" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Gewenste startdatum
+                            </label>
+                            <input 
+                                type="date" 
+                                id="startdatum" 
+                                name="startdatum"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                        </div>
+                        
+                        <!-- Opmerkingen -->
+                        <div>
+                            <label for="bericht" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Aanvullende opmerkingen of vragen
+                            </label>
+                            <textarea 
+                                id="bericht" 
+                                name="bericht" 
+                                rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Bijvoorbeeld: specifieke wensen, vragen over het pakket..."
+                            ></textarea>
+                        </div>
+                        
+                        <!-- Privacy -->
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="privacy" 
+                                name="privacy" 
+                                required
+                                class="mt-1 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                            >
+                            <label for="privacy" class="ml-2 text-sm text-gray-600">
+                                Ik ga akkoord met de <a href="#" class="text-primary hover:underline">privacyverklaring</a> *
+                            </label>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button 
+                            type="submit"
+                            class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105"
+                        >
+                            Aanvraag Versturen
+                        </button>
+                        
+                        <p class="text-sm text-gray-500 text-center">
+                            We nemen binnen 24 uur contact met je op
+                        </p>
+                        
+                    </form>
+                </div>
+                
+                <!-- Trust Elements -->
+                <div class="mt-12 grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl mb-2">⚡</div>
+                        <p class="font-semibold">Snelle Response</p>
+                        <p class="text-sm text-gray-600">Binnen 24 uur contact</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">🔒</div>
+                        <p class="font-semibold">Veilig & Privacy</p>
+                        <p class="text-sm text-gray-600">Jouw gegevens zijn veilig</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">✓</div>
+                        <p class="font-semibold">Geen Verplichtingen</p>
+                        <p class="text-sm text-gray-600">Vrijblijvend kennismaken</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 DirectTriage. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript voor dynamische pakket info -->
+    <script>
+        // Pakket data
+        const packages = {
+            'starter': {
+                name: 'Starter Pakket',
+                price: '€395/maand'
+            },
+            'groei': {
+                name: 'Groei Pakket',
+                price: '€645/maand'
+            },
+            'compleet': {
+                name: 'Compleet Pakket',
+                price: 'Op aanvraag'
+            }
+        };
+
+        // Haal pakket uit URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedPackage = urlParams.get('pakket') || 'starter';
+
+        // Update UI
+        if (packages[selectedPackage]) {
+            document.getElementById('package-name').textContent = packages[selectedPackage].name;
+            document.getElementById('package-price').textContent = packages[selectedPackage].price;
+            document.getElementById('form-pakket').value = packages[selectedPackage].name;
+            document.getElementById('form-prijs').value = packages[selectedPackage].price;
+            document.getElementById('form-subject').value = `Nieuwe aanvraag: ${packages[selectedPackage].name}`;
+        }
+    </script>
+
+</body>
+</html>
