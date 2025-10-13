@@ -4,288 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - DirectTriage</title>
-    <meta name="description" content="Neem contact op met DirectTriage. Plan een kennismaking of bel direct: 06 311 951 71">
+    <meta name="description" content="Neem contact op met DirectTriage. Bel ons of stuur een bericht.">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#F97316',
+                        primary: '#1e40af',
                     }
                 }
             }
         }
     </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
 </head>
 <body class="bg-gray-50">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-primary">
-                    DIRECT<span class="text-secondary">│</span>TRIAGE
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary">Home</a>
-                    <a href="index.html#diensten" class="text-gray-700 hover:text-primary">Diensten</a>
-                    <a href="index.html#voor-wie" class="text-gray-700 hover:text-primary">Voor Wie</a>
+                <a href="index.html" class="text-2xl font-bold text-primary">DirectTriage</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
+                    <a href="index.html#diensten" class="text-gray-700 hover:text-primary transition">Diensten</a>
+                    <a href="index.html#pakketten" class="text-gray-700 hover:text-primary transition">Pakketten</a>
                     <a href="contact.html" class="text-primary font-semibold">Contact</a>
-                    <a href="tel:0631195171" class="bg-secondary hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold">
-                        06 311 951 71
-                    </a>
                 </div>
-                
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="index.html" class="block py-2 text-gray-700">Home</a>
-                <a href="index.html#diensten" class="block py-2 text-gray-700">Diensten</a>
-                <a href="index.html#voor-wie" class="block py-2 text-gray-700">Voor Wie</a>
-                <a href="contact.html" class="block py-2 text-primary font-semibold">Contact</a>
-                <a href="tel:0631195171" class="block py-2 text-secondary font-semibold">Bel: 06 311 951 71</a>
+                <a href="tel:0631195171" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-800 transition">
+                    Bel Direct
+                </a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero text-gray-900">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Neem Contact Op</h1>
-            <p class="text-xl text-blue-900">
-                We beantwoorden uw vragen graag en maken een vrijblijvend voorstel op maat
-            </p>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary to-blue-800 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Neem Contact Op
+                </h1>
+                <p class="text-xl text-blue-100">
+                    We helpen u graag verder met uw vragen over verzuimbegeleiding
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Content -->
+    <!-- Contact Sectie -->
     <section class="py-16">
         <div class="container mx-auto px-4">
-            
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                
-                <!-- Contact Info -->
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Direct Contact</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
                     
-                    <div class="space-y-6">
+                    <!-- Contact Informatie -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                            Direct Contact
+                        </h2>
                         
-                        <!-- Telefoon -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                </svg>
+                        <div class="space-y-6 mb-8">
+                            <!-- Telefoon -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-semibold text-gray-900 mb-1">Telefoon</h3>
+                                    <a href="tel:0631195171" class="text-primary hover:text-blue-800 font-semibold text-lg">
+                                        06 311 951 71
+                                    </a>
+                                    <p class="text-sm text-gray-600 mt-1">Ma-Vr: 09:00 - 17:00</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-1">Telefoon</h3>
-                                <a href="tel:0631195171" class="text-primary hover:text-blue-800 text-xl font-semibold">
-                                    06 311 951 71
-                                </a>
-                                <p class="text-gray-600 text-sm mt-1">
-                                    Ma-Vr 08:00-17:00 uur<br>
-                                    Spoedzaken: 24/7 bereikbaar
-                                </p>
+
+                            <!-- Email -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-semibold text-gray-900 mb-1">E-mail</h3>
+                                    <a href="mailto:info@directtriage.nl" class="text-primary hover:text-blue-800 font-semibold">
+                                        info@directtriage.nl
+                                    </a>
+                                    <p class="text-sm text-gray-600 mt-1">We reageren binnen 24 uur</p>
+                                </div>
+                            </div>
+
+                            <!-- Locatie -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-semibold text-gray-900 mb-1">Locatie</h3>
+                                    <p class="text-gray-600">
+                                        Actief in heel Nederland<br>
+                                        <span class="text-sm">Online en op locatie</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        
-                        <!-- Email -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-1">Email</h3>
-                                <a href="mailto:info@teletriage.nl" class="text-primary hover:text-blue-800 text-xl font-semibold">
-                                    info@teletriage.nl
-                                </a>
-                                <p class="text-gray-600 text-sm mt-1">
-                                    We reageren binnen 24 uur
-                                </p>
-                            </div>
+
+                        <!-- Trust -->
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <h3 class="font-bold text-gray-900 mb-3">Waarom DirectTriage?</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Binnen 24 uur reactie
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Persoonlijke aanpak
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Vrijblijvend kennismaken
+                                </li>
+                            </ul>
                         </div>
-                        
                     </div>
-                    
-                    <!-- Info Box -->
-                    <div class="mt-12 bg-blue-50 border-2 border-primary rounded-xl p-6">
-                        <h3 class="font-bold text-lg mb-3">Wat Kunt U Verwachten?</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Reactie binnen 24 uur op werkdagen</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Vrijblijvend kennismakingsgesprek (30 min)</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Voorstel op maat binnen 48 uur</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Geen verplichtingen of verborgen kosten</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
-                
-                <!-- Contact Form -->
-                <div class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-2xl font-bold mb-6">Stuur een Bericht</h2>
-                    
-                    <form id="contact-form" class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="59c9e73c-3a2f-463b-8885-a8a2909386fe">
-                        <input type="hidden" name="subject" value="Nieuw bericht via DirectTriage contactformulier">
-<input type="hidden" name="from_name" value="DirectTriage Website">
-                        
-                        <div>
-                            <label class="block font-semibold mb-2">Naam *</label>
-                            <input 
-                                type="text" 
-                                name="name"
-                                required
-                                class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-primary focus:outline-none"
-                                placeholder="Uw naam"
-                            />
-                        </div>
-                        
-                        <div>
-                            <label class="block font-semibold mb-2">Email *</label>
-                            <input 
-                                type="email" 
-                                name="email"
-                                required
-                                class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-primary focus:outline-none"
-                                placeholder="uw@email.nl"
-                            />
-                        </div>
-                        
-                        <div>
-                            <label class="block font-semibold mb-2">Telefoon</label>
-                            <input 
-                                type="tel" 
-                                name="phone"
-                                class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-primary focus:outline-none"
-                                placeholder="06 12345678"
-                            />
-                        </div>
-                        
-                        <div>
-                            <label class="block font-semibold mb-2">Type Kliniek *</label>
-                            <select 
-                                name="clinic-type"
-                                required
-                                class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-primary focus:outline-none"
+
+                    <!-- Contact Formulier -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                            Stuur Een Bericht
+                        </h2>
+
+                        <!-- Netlify Form -->
+                        <form name="contact" method="POST" data-netlify="true" action="/bedankt.html" class="space-y-6">
+                            
+                            <!-- Netlify required -->
+                            <input type="hidden" name="form-name" value="contact">
+                            
+                            <!-- Naam -->
+                            <div>
+                                <label for="naam" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Naam *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="naam" 
+                                    name="naam" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                >
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    E-mailadres *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                >
+                            </div>
+
+                            <!-- Telefoon -->
+                            <div>
+                                <label for="telefoon" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Telefoonnummer
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="telefoon" 
+                                    name="telefoon"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                >
+                            </div>
+
+                            <!-- Onderwerp -->
+                            <div>
+                                <label for="onderwerp" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Onderwerp *
+                                </label>
+                                <select 
+                                    id="onderwerp" 
+                                    name="onderwerp" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                >
+                                    <option value="">Selecteer een onderwerp</option>
+                                    <option value="Algemene vraag">Algemene vraag</option>
+                                    <option value="Pakket informatie">Pakket informatie</option>
+                                    <option value="Offerte aanvraag">Offerte aanvraag</option>
+                                    <option value="Bestaande klant">Bestaande klant</option>
+                                    <option value="Anders">Anders</option>
+                                </select>
+                            </div>
+
+                            <!-- Bericht -->
+                            <div>
+                                <label for="bericht" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Uw bericht *
+                                </label>
+                                <textarea 
+                                    id="bericht" 
+                                    name="bericht" 
+                                    rows="5"
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Vertel ons waar we u mee kunnen helpen..."
+                                ></textarea>
+                            </div>
+
+                            <!-- Privacy -->
+                            <div class="flex items-start">
+                                <input 
+                                    type="checkbox" 
+                                    id="privacy" 
+                                    name="privacy" 
+                                    required
+                                    class="mt-1 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                                >
+                                <label for="privacy" class="ml-2 text-sm text-gray-600">
+                                    Ik ga akkoord met de <a href="#" class="text-primary hover:underline">privacyverklaring</a> *
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button 
+                                type="submit"
+                                class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105"
                             >
-                                <option value="">Selecteer...</option>
-                                <option value="esthetiek">Esthetische Kliniek</option>
-                                <option value="tandarts">Tandartspraktijk</option>
-                                <option value="oogzorg">Oogkliniek</option>
-                                <option value="plastisch">Plastische Chirurgie</option>
-                                <option value="dermatologie">Dermatologie</option>
-                                <option value="anders">Anders</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block font-semibold mb-2">Bericht *</label>
-                            <textarea 
-                                name="message"
-                                required
-                                rows="4"
-                                class="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-primary focus:outline-none"
-                                placeholder="Vertel ons over uw situatie en wensen..."
-                            ></textarea>
-                        </div>
-                        
-                        <button 
-                            type="submit"
-                            class="w-full bg-primary hover:bg-blue-800 text-white py-4 rounded-lg font-bold text-lg"
-                        >
-                            Verstuur Bericht →
-                        </button>
-                        
-                        <p class="text-sm text-gray-600 text-center">
-                            We reageren binnen 24 uur op werkdagen
-                        </p>
-                        
-                    </form>
+                                Verstuur Bericht
+                            </button>
+
+                            <p class="text-sm text-gray-500 text-center">
+                                We reageren binnen 24 uur op uw bericht
+                            </p>
+
+                        </form>
+                    </div>
+
                 </div>
-                
             </div>
-            
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="text-2xl font-bold text-white mb-4">
-                        DIRECT<span class="text-secondary">│</span>TRIAGE
-                    </div>
-                    <p class="text-sm">Professionele triage, waarneming en consultatie voor commerciële zorgklinieken.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Diensten</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html#diensten" class="hover:text-white">Wat We Doen</a></li>
-                        <li><a href="index.html#voor-wie" class="hover:text-white">Voor Wie</a></li>
-                        <li><a href="index.html#pakketten" class="hover:text-white">Pakketten</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Over Ons</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="https://www.teletriage.nl" class="hover:text-white">TeleTriage BV</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="tel:0631195171" class="hover:text-white">06 311 951 71</a></li>
-                        <li><a href="mailto:info@teletriage.nl" class="hover:text-white">info@teletriage.nl</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-sm">
-                <p>© 2025 DirectTriage - Onderdeel van TeleTriage BV</p>
-            </div>
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 DirectTriage. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
-    <script src="js/app.js"></script>
 </body>
 </html>
