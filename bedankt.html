@@ -4,113 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bedankt voor uw aanvraag - DirectTriage</title>
+    <meta name="description" content="Bedankt voor uw aanvraag. We nemen zo snel mogelijk contact met u op.">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#F97316',
+                        primary: '#1e40af',
                     }
                 }
             }
         }
     </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
 
     <!-- Header -->
-    <header class="bg-white border-b border-gray-200">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-center">
-                <div class="text-2xl font-bold text-primary tracking-tight">
-                    DIRECT<span class="text-secondary">│</span>TRIAGE
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">DirectTriage</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition">Home</a>
+                    <a href="index.html#diensten" class="text-gray-700 hover:text-primary transition">Diensten</a>
+                    <a href="index.html#pakketten" class="text-gray-700 hover:text-primary transition">Pakketten</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition">Contact</a>
                 </div>
+                <a href="tel:0631195171" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-800 transition">
+                    Bel Direct
+                </a>
             </div>
         </nav>
     </header>
 
-    <!-- Success Message -->
+    <!-- Bedankt Sectie -->
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto text-center">
+            <div class="max-w-3xl mx-auto text-center">
                 
                 <!-- Success Icon -->
-                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
+                <div class="mb-8">
+                    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
                 </div>
-                
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">
-                    Aanvraag Ontvangen!
+
+                <!-- Hoofdtekst -->
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Bedankt voor Uw Aanvraag!
                 </h1>
                 
                 <p class="text-xl text-gray-600 mb-8">
-                    Bedankt voor uw interesse in DirectTriage. We hebben uw aanvraag in goede orde ontvangen.
+                    We hebben uw aanvraag in goede orde ontvangen en zullen <strong>binnen 24 uur</strong> contact met u opnemen.
                 </p>
-                
-                <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-                    <h2 class="text-2xl font-bold mb-6">Wat Gebeurt Er Nu?</h2>
+
+                <!-- Wat gebeurt er nu -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 mb-12 text-left">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Wat Gebeurt Er Nu?</h2>
                     
-                    <div class="space-y-6 text-left">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <span class="text-primary font-bold">1</span>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                                    1
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-semibold mb-1">Bevestiging per Email</h3>
-                                <p class="text-gray-600 text-sm">U ontvangt binnen enkele minuten een bevestiging op het opgegeven emailadres.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <span class="text-primary font-bold">2</span>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold mb-1">Telefonisch Contact</h3>
-                                <p class="text-gray-600 text-sm">Binnen 24 uur nemen we telefonisch contact met u op voor een vrijblijvend kennismakingsgesprek.</p>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-gray-900 mb-1">We Beoordelen Uw Aanvraag</h3>
+                                <p class="text-gray-600">Ons team bekijkt uw aanvraag en bereidt een passend voorstel voor.</p>
                             </div>
                         </div>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <span class="text-primary font-bold">3</span>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                                    2
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-semibold mb-1">Voorstel op Maat</h3>
-                                <p class="text-gray-600 text-sm">We bespreken uw situatie en maken een voorstel dat perfect bij uw praktijk past.</p>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-gray-900 mb-1">Persoonlijk Contact</h3>
+                                <p class="text-gray-600">We nemen binnen 24 uur telefonisch contact met u op om uw wensen te bespreken.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                                    3
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-gray-900 mb-1">Vrijblijvende Offerte</h3>
+                                <p class="text-gray-600">U ontvangt een offerte op maat, volledig afgestemd op uw situatie.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="index.html" class="bg-primary hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition">
-                        Terug naar Home
-                    </a>
-                    <a href="tel:0631195171" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold transition">
-                        Direct Bellen: 06 311 951 71
+
+                <!-- Contact opties -->
+                <div class="bg-blue-50 rounded-xl p-8 mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Wilt u Sneller Contact?</h3>
+                    <p class="text-gray-600 mb-6">
+                        Heeft u haast of direct vragen? Bel ons gerust!
+                    </p>
+                    <a href="tel:0631195171" class="inline-block bg-primary hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                        Bel Direct: 06 311 951 71
                     </a>
                 </div>
-                
-                <p class="text-sm text-gray-500 mt-8">
-                    Liever direct contact? Bel ons op <a href="tel:0631195171" class="text-primary font-semibold">06 311 951 71</a>
-                </p>
-                
+
+                <!-- Terug naar home -->
+                <a href="index.html" class="inline-flex items-center text-primary hover:text-blue-800 font-semibold transition">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Terug naar Homepage
+                </a>
+
             </div>
         </div>
     </section>
